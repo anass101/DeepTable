@@ -2,21 +2,14 @@ from inputvars import *
 epochs, md1,lrs,inp,emb_vec = inputvarsTrain(sys.argv[1:],sys.argv[0])
 import numpy as np
 import gensim
-from gensim.models.keyedvectors import KeyedVectors
-import re
-import random 
-import pickle
-from keras_self_attention import SeqSelfAttention
 import sys
 import os
 os.environ['KERAS_BACKEND']='tensorflow'
 import keras
 from keras import regularizers
-from keras.layers import Embedding,Dense, Input, Flatten,Conv1D,Conv2D, MaxPooling1D, Embedding, Concatenate, Dropout,AveragePooling1D,LSTM, GRU, Bidirectional, TimeDistributed,Convolution2D,MaxPooling2D,AveragePooling2D,Permute,Activation,Reshape, BatchNormalization,Permute,Activation,Reshape, BatchNormalization,RepeatVector
-from keras.layers.core import Permute
-from keras.models import Model,Sequential,load_model 
+from keras.layers import Embedding,Dense, Input, Flatten, Embedding, Dropout,LSTM, Bidirectional, TimeDistributed,MaxPooling2D,Reshape,Reshape
+from keras.models import Model 
 from keras.callbacks import ModelCheckpoint
-from keras import backend as K
 np.random.seed(813306)	
 from tensorflow import set_random_seed
 set_random_seed(2)

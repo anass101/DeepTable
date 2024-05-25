@@ -1,9 +1,7 @@
 import numpy as np
-import random 
 import pickle
 import os
 os.environ['KERAS_BACKEND']='tensorflow'
-import keras
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 
 

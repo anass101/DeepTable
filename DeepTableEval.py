@@ -2,17 +2,12 @@ from inputvars import *
 md1,output,inp = inputvarsEval(sys.argv[1:],sys.argv[0])
 import pandas as pd
 import numpy as np
-import random 
 import pickle
 import os
 os.environ['KERAS_BACKEND']='tensorflow'
-import keras
-from keras.layers import Embedding,Dense, Input, Flatten,Conv1D,Conv2D, MaxPooling1D, Embedding, Concatenate, Dropout,AveragePooling1D,LSTM, GRU, Bidirectional, TimeDistributed,Convolution2D,MaxPooling2D,AveragePooling2D,Permute
-from keras.layers.core import Permute
-from keras.models import Model,Sequential,load_model 
+from keras.models import load_model 
 from sklearn.metrics import classification_report as cr
 from sklearn.metrics import confusion_matrix as cm
-from keras import backend as K
 np.random.seed(813306)	
 from input_transformation import *
 
