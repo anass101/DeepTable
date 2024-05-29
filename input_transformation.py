@@ -1,11 +1,14 @@
 import numpy as np
-import pickle
 import os
 os.environ['KERAS_BACKEND']='tensorflow'
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
+import pickle 
 
 
-
+def read_data(inp):
+    with open(inp,'rb') as f: 
+        [X,y] = pickle.load(f)
+    return [X,y]
 
 
 def transform_tables(inp, config):
@@ -15,8 +18,7 @@ def transform_tables(inp, config):
 	MAX_CELL_LENGTH=4
 	
 
-	with open(inp,'rb') as f: 
-		[X,y] = pickle.load(f)
+	[X,y] = read_data(inp)
 	
 	texts = ["XXX"] + [' '.join(text_to_word_sequence(' '.join(sum(x,[])),lower=True)) for x in X]
 	

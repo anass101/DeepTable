@@ -2,6 +2,7 @@ numpy
 gensim
 keras==2.15.0
 keras_self_attention
-tensorflow
+tensorflow==2.15.1
 pandas==1.4.4
 scikit-learn
+scipy==1.10.1
