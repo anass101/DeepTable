@@ -8,17 +8,10 @@ from keras.models import load_model
 from sklearn.metrics import classification_report as cr
 from sklearn.metrics import confusion_matrix as cm
 
-from input_transformation import *
+from input_transformation import transform_tables
 
 os.environ['KERAS_BACKEND']='tensorflow'
-np.random.seed(813306)	
-
-def read_input(inp):
-	with open(inp,'rb') as f:
-		[data,Y,dicTab]=pickle.load(f)
-	train_size = int(Y.shape[0]*0.75)
-	return data[train_size:,:,:,:],Y[train_size:]
-
+np.random.seed(813306)
 	
 if __name__ == "__main__":
 

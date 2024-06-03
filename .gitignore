@@ -2,3 +2,5 @@ __pycache__/
 .env/
 model_dir/
 output/
+
+launch_command.txt
